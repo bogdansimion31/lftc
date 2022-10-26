@@ -1,0 +1,32 @@
+Lexic:
+
+a.Special symbols, representing
+
+- operators + - * / = < <= == >= != % | &
+- separators [ ] { } ( ) , : ; space
+- reserved words:
+char int bool const do if else read break while true false write and or for
+
+b.identifiers
+
+-a sequence of letters and digits, such that the first character is a letter; the rule is:
+<identifier> ::= <letter> | <letter> <l_d_seq>
+<l_d_seq> ::= <l_d> | <l_d>  <l_d_seq>
+<l_d> ::= <letter> | <digit>
+<letter> ::= "A" | "B" | ...| "Z" | "a" | "b" | ... | "z" ;
+<symbol> ::= "[" | "]" | "{" | "}" | "(" | ")" | "<" | ">"| "'" | '"' | "=" | "|" | "." | "," | ";" ;
+<digit> ::= "0" | "1" |...| "9" ;
+<state> ::= "TRUE" | "FALSE"
+
+c.constants
+
+<charconst> = “ ‘ “ char “ ‘ “
+<char> = <letter> | <digit> | <special_char>
+<stringconst> = “ “ “ {char} “ “ “
+
+<>non_zero_digit ::= 1|2|..|9
+<>integer ::= <unsigned>|<signed>|0
+<>unsigned ::= <non_zero_digit> <digit_seq> | <non_zero_digit>
+<>digit_seq ::= <dig> <digit_seq> | <digit>
+<>digit ::= 1|2|…|9
+

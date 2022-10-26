@@ -1,0 +1,30 @@
+Syntax:
+The words - predefined tokens are specified between " and ":
+
+program ::= "int" "main" "(" ")" "{" <decllist> <stmtlist> "return 0;" "}"
+
+decllist ::= <declaration>; | <declaration> ";" <decllist>
+declaration ::= <type> IDENTIFIER | <type <identifier_list>
+
+identifier_list ::= IDENTIFIER | IDENTIFIER "," <identifier_list>
+
+<stmtlist> ::= <stmt> | <stmt> ";" <stmtlist>
+<stmt> ::= <simplstmt> | <structstmt>
+<simplstmt> ::= <assignstmt> | <iostmt>
+<assignstmt> ::= IDENTIFIER "=" <>expression
+<iostmt> ::= <readstmt> | <writestmt>
+<readstmt> ::= "read" ">>" IDENTIFIER
+<writestmt> ::= "write" "<<" <expression>
+<structstmt> ::= <ifstmt> | <whilestmt>
+<ifstmt> ::= "if" "(" <condition> ")" "{" <stmtlist> "}" ["else" "{" <stmtlist> "}"]
+<whilestmt> ::= "while" "(" <condition> ")" "{" <stmtlist> "}"
+
+<condition> ::= <expression>| <expression> <op_cond> <expression> | <expression> <op_logic> <expression>
+<expression> ::= <identifier>| <identifier> <op_aritm> <expression>| <const> <op_aritm> <const> | <const>
+
+<op_logic> := "&" | "|"
+<op_cond> ::= "<" | "<=" | "==" | "!=" | ">=" | ">"
+<op_aritm> ::= "+" | "-" | "*" | "/"
+<arraydecl> ::= <type1> IDENTIFIER "[" nr "]"
+<type1> ::= "int" | "char" | "bool"
+<type> ::= <type1>|<arraydecl>
